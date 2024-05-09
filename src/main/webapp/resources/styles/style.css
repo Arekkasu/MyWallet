@@ -1,0 +1,64 @@
+
+
+/* VARIABLES */
+
+:root {
+
+    --color-primary: #7CB551;
+    --color-secondary: #e8e98d;
+    --color-third: #f0cb6b;
+    --color-fourth: #f6aa48;
+    --color-five: #c53245;
+
+}
+
+
+/* CLASES */
+
+
+
+.green-backgorund{
+
+    background-color: var(--color-primary);
+    height: 50vh;
+    color: #fffffe;
+
+
+}
+
+/*
+IMAGE ARTICLE 1
+
+*/
+
+
+
+#image-section{
+
+    width: 20vw;
+    height: 35vh;
+
+}
+
+
+
+
+
+/* NAVBAR ESTILO */
+
+#logo-nav{
+    width: 30px; !important;
+}
+
+nav
+{
+    background-color: var(--color-primary);
+}
+
+.navbar .nav-link {
+    color: #fffffe; !important;
+}
+
+.navbar .navbar-brand{
+    color: #fffffe; !important;
+}
