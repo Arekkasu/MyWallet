@@ -62,7 +62,7 @@
                         <a class="nav-link" aria-disabled="true">Iniciar Sesion</a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link" aria-disabled="true">Registrarse</a>
+                        <a class="nav-link" aria-disabled="true" href="/register">Registrarse</a>
                     </li>
                 </ul>
             </div>
