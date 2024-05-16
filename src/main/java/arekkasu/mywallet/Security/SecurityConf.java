@@ -46,7 +46,10 @@ public class SecurityConf {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable()).httpBasic(withDefaults())
-                .formLogin(withDefaults());
+                .formLogin(formLogin -> formLogin
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/FAQ", true));
         return http.build();
     }
 

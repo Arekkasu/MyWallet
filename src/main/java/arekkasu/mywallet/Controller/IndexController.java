@@ -2,10 +2,14 @@ package arekkasu.mywallet.Controller;
 
 
 import arekkasu.mywallet.Controller.DTO.RegisterUserDTO;
+import arekkasu.mywallet.Controller.DTO.loginUserDTO;
 import arekkasu.mywallet.Service.UsersService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,9 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
-/**
- * The type Index controller.
- */
 @Controller
 @RequestMapping("/")
 public class IndexController {
@@ -26,22 +27,16 @@ public class IndexController {
     @Autowired
     private UsersService usersService;
 
-    /**
-     * Index page string.
-     *
-     * @return the index.jsp
-     */
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
+
     @GetMapping
     public String indexPage(){
         return "index";
     }
 
 
-    /**
-     * Register page string.
-     *
-     * @return the register.jsp
-     */
     @GetMapping("register")
     public String registerPage(Model model){
 
@@ -81,21 +76,44 @@ public class IndexController {
 
 
 
-    /**
-     * Login page string.
-     *
-     * @return the Login.jsp
-     */
     @GetMapping("login")
-    public String loginPage(){
+    public String loginPage(Model model){
+        model.addAttribute("loginUser", new loginUserDTO());
         return "login";
+
     }
 
-    /**
-     * Faq page string.
-     *
-     * @return the FAQ.jsp
-     */
+
+
+    @PostMapping("login")
+    public String loginPagePost(@ModelAttribute("loginUser") @Valid loginUserDTO loginUser, BindingResult bindingResult, Model model){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("errors", bindingResult.getAllErrors());
+            System.out.println(model.getAttribute("errors"));
+            return "login";
+        }
+        try {
+            UserDetails userDetails = usersService.loadUserByUsername(loginUser.getUsername());
+            System.out.println(userDetails);
+            if (passwordEncoder.matches(loginUser.getPassword(), userDetails.getPassword())) {
+                // Autenticación exitosa, redirigir al usuario a la página de inicio
+                return "redirect:/FAQ";
+            } else {
+                // La contraseña es incorrecta, mostrar un mensaje de error
+                model.addAttribute("error", "Nombre de usuario o contraseña incorrectos");
+                return "login";
+            }
+        } catch (UsernameNotFoundException e) {
+            // El nombre de usuario no existe, mostrar un mensaje de error
+            model.addAttribute("error", "Nombre de usuario o contraseña incorrectos");
+            return "login";
+        }
+    }
+
+
+
+
+
     @GetMapping("FAQ")
     @PreAuthorize("hasAnyRole('ADMIN')")
     public String FAQPage(){
@@ -103,7 +121,11 @@ public class IndexController {
     }
 
 
-    
+    @GetMapping("error-403")
+    public String error403(){
+        return "errors/error-403";
+    }
+
 
 
 }

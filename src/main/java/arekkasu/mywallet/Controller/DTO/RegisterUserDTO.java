@@ -20,7 +20,8 @@ public class RegisterUserDTO {
     private String Email;
 
 
-    public RegisterUserDTO() {
+    public
+    RegisterUserDTO() {
     }
 
     public RegisterUserDTO(String username, String password, String email) {
