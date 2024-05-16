@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface UsersRepository  extends JpaRepository<Users, Long> {
 
 
-    @Query("SELECT u FROM Users u WHERE u.username = ?1")
+    //@Query("SELECT u FROM Users u WHERE u.username = ?1")
     Users findByUsername(String username);
 
     boolean existsByUsername(String username);

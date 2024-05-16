@@ -1,9 +1,10 @@
 package arekkasu.mywallet.Controller.DTO;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
-public class RegisterUser {
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+public class RegisterUserDTO {
 
 
     @NotNull(message = "Username is required")
@@ -19,10 +20,10 @@ public class RegisterUser {
     private String Email;
 
 
-    public RegisterUser() {
+    public RegisterUserDTO() {
     }
 
-    public RegisterUser(String username, String password, String email) {
+    public RegisterUserDTO(String username, String password, String email) {
         Username = username;
         Password = password;
         Email = email;

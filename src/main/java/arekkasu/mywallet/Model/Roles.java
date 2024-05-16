@@ -1,7 +1,8 @@
 package arekkasu.mywallet.Model;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 
 /**
  * The type Roles.

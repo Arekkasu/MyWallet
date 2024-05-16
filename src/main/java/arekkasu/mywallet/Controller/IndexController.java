@@ -1,9 +1,11 @@
 package arekkasu.mywallet.Controller;
 
 
-import arekkasu.mywallet.Controller.DTO.RegisterUser;
+import arekkasu.mywallet.Controller.DTO.RegisterUserDTO;
 import arekkasu.mywallet.Service.UsersService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
 
 
 /**
@@ -41,17 +42,17 @@ public class IndexController {
      *
      * @return the register.jsp
      */
-    @GetMapping("/register")
+    @GetMapping("register")
     public String registerPage(Model model){
 
-        model.addAttribute("registerUser", new RegisterUser());
+        model.addAttribute("registerUser", new RegisterUserDTO());
         //usersService.UserRegister();
         return "register";
     }
 
 
-    @PostMapping("/register")
-    public String registerUser(@ModelAttribute("registerUser") @Valid RegisterUser registerUser, BindingResult bindingResult, Model model){
+    @PostMapping("register")
+    public String registerUser(@ModelAttribute("registerUser") @Valid RegisterUserDTO registerUser, BindingResult bindingResult, Model model){
 
         boolean userExists = usersService.UserExists(registerUser.getUsername());
 
@@ -85,7 +86,7 @@ public class IndexController {
      *
      * @return the Login.jsp
      */
-    @GetMapping("/login")
+    @GetMapping("login")
     public String loginPage(){
         return "login";
     }
@@ -95,13 +96,14 @@ public class IndexController {
      *
      * @return the FAQ.jsp
      */
-    @GetMapping("/FAQ")
+    @GetMapping("FAQ")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public String FAQPage(){
         return "FAQ";
     }
 
 
-
+    
 
 
 }
