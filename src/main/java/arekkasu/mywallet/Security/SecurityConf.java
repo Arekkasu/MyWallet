@@ -49,7 +49,7 @@ public class SecurityConf {
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/FAQ", true));
+                        .defaultSuccessUrl("/user", true));
         return http.build();
     }
 

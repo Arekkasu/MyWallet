@@ -59,10 +59,21 @@ public class UsersService implements UserServiceDet{
 
     }
 
+
     //ACCION VERIFICAR EXISTENCIA
     public boolean UserExists(String Username){
         return usersRepository.existsByUsername(Username);
     }
+
+
+
+    //OBTENER TODA LA INFORMACION DEL USUARIO
+    @Override
+    public Users userGetData(String username) {
+        return usersRepository.findByUsername(username);
+    }
+
+
 
 
     //CREACION DE USUARIO

@@ -9,6 +9,7 @@ public interface UserServiceDet extends UserDetailsService {
 
     public Users UserRegister(RegisterUserDTO registerUser);
 
+    public Users userGetData(String username);
 
 
 

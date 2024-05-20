@@ -41,12 +41,12 @@ public class Users {
 
         //RELACION DE INGRESOS
 
-        @OneToMany(mappedBy = "Users",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+        @OneToMany(mappedBy = "users",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
         private List<Revenue> revenue;
 
         //RELACION DE EGRESOS
 
-        @OneToMany(mappedBy = "Users",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+        @OneToMany(mappedBy = "users",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
         private List<Expenses> expenses;
 
 

@@ -36,7 +36,6 @@ public class IndexController {
         return "index";
     }
 
-
     @GetMapping("register")
     public String registerPage(Model model){
 
@@ -97,7 +96,7 @@ public class IndexController {
             System.out.println(userDetails);
             if (passwordEncoder.matches(loginUser.getPassword(), userDetails.getPassword())) {
                 // Autenticación exitosa, redirigir al usuario a la página de inicio
-                return "redirect:/FAQ";
+                return "redirect:/user";
             } else {
                 // La contraseña es incorrecta, mostrar un mensaje de error
                 model.addAttribute("error", "Nombre de usuario o contraseña incorrectos");
@@ -115,17 +114,8 @@ public class IndexController {
 
 
     @GetMapping("FAQ")
-    @PreAuthorize("hasAnyRole('ADMIN')")
     public String FAQPage(){
         return "FAQ";
     }
-
-
-    @GetMapping("error-403")
-    public String error403(){
-        return "errors/error-403";
-    }
-
-
 
 }
