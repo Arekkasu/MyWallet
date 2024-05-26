@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM manven:3.8.5-jdk-17 as build
+FROM maven:3.8.5-jdk-17 as build
 COPY . .
 RUN mvn clean package -DskipTests
 # Stage 2: Run the application
