@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center me-5" href="#">
+            <a class="navbar-brand d-flex align-items-center me-5" >
                 <fmt:message key="navbar.brand" />
                 <img src="../../resources/images/MywalletLogo.png" alt="<fmt:message key="navbar.brand" />" id="logo-nav" class="d-inline-block align-self-center">
             </a>
@@ -23,7 +23,7 @@
                         <a class="nav-link" href="/register"><fmt:message key="navbar.register" /></a>
                     </li>
                     <!-- Dropdown para seleccionar el idioma -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown text-center">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe"></i> <fmt:message key="navbar.language" />
                         </a>

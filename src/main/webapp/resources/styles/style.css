@@ -312,3 +312,26 @@ button .btn .btn-primary{
     padding: 10px 20px; /* Ajusta este valor al espacio que prefieras */
     border-radius: 10px; /* Ajusta este valor a la curvatura que prefieras */
 }
+
+.navbar-toggler{
+    background-color: #7f5af0; !important;
+
+}
+
+/* Estilo para el menú desplegable de selección de idioma */
+.nav-item.dropdown .dropdown-menu {
+    background-color: #333; /* Cambia este valor al color que prefieras */
+    color: #fff; /* Cambia este valor al color que prefieras para el texto */
+}
+
+.nav-item.dropdown .dropdown-menu a {
+    color: #fff; /* Cambia este valor al color que prefieras para los enlaces */
+}
+
+.nav-item.dropdown .dropdown-menu li {
+    text-align: center; /* Centra el texto en el menú desplegable */
+}
+.navbar-toggler-icon {
+
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+}

@@ -2,7 +2,7 @@
 <section id="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><fmt:message key="navbar.brand" /></a>
+            <a class="navbar-brand" aria-disabled="true"><fmt:message key="navbar.brand" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                     aria-label="Toggle navigation">
