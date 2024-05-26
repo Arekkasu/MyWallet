@@ -9,7 +9,7 @@ function TablaUsuario() {
         type: "GET",
         success: function (data) {
             // Inicializa DataTables y guarda la referencia en la variable table
-            table = $('#usersTable').DataTable({
+            table = $('.tableSection #users').DataTable({
                 responsive: {
                     details: {
                         display: $.fn.dataTable.Responsive.display.modal({

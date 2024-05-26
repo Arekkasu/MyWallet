@@ -4,19 +4,19 @@
 <body>
 <%@ include file="../../common/NavAdmin.jsp" %>
 
-
+<!-- Sección del formulario -->
 <section id="addUserSection" class="container-fluid">
+    <h2><fmt:message key="admin.agregar.user" /></h2>
+    <c:if test="${userExists != null}" >
+        <p><fmt:message key="admin.user.exist" /></p>
+    </c:if>
+    <c:if test="${messageSucces != null}" >
+        <p><fmt:message key="user.message.succes" /></p>
+    </c:if>
     <div class="row">
         <div class="col-lg-12 col-md-12 ml-3 mb-5">
             <div class=" p-4">
-                <h2><fmt:message key="admin.agregar.user" /></h2>
-                <c:if test="${userExists != null}" >
-                    <p><fmt:message key="admin.user.exist" /></p>
-                </c:if>
-                <c:if test="${messageSucces != null}" >
-                    <p><fmt:message key="user.message.succes" /></p>
-                </c:if>
-                <form:form class="row g-3"  method="post" modelAttribute="registerUser" action="/admin/users">
+                <form:form class="row g-3" method="post" modelAttribute="registerUser" action="/admin/users">
                     <div class="col-md-3">
                         <label for="email" class="form-label">Email</label>
                         <form:input path="Email" id="email" class="form-control" placeholder="Email"/>
@@ -41,23 +41,11 @@
     </div>
 </section>
 
-                            <!--SOLUCION AL BIG DE NO REPSONSIVE CON DATATABLES-->
-<section id="tableSection">
-    <table id="usersTable" class="display table table-striped" style="width: 100%">
-        <thead>
-        <tr>
-            <th class="border-right">ID</th>
-            <th class="border-right">Email</th>
-            <th class="border-right">Username</th>
-            <th>Total Amount</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Los datos de la tabla se llenarán dinámicamente con DataTables -->
-        </tbody>
-    </table>
+<!-- Sección de la tabla -->
+<section class="tableSection">
+    <table id="users" class="display table table-striped table-dark" style="width: 100%"></table>
 </section>
 
-
+<%@ include file="../../common/footer.jsp" %>
 </body>
 </html>

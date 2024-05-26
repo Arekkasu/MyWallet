@@ -1,10 +1,24 @@
-import {i18n, i18nPromise} from '../i18n.js';
 
-
-function TablaRevenue() {
+let i18n;
+let i18nPromise = new Promise((resolve, reject) => {
+    $.ajax({
+        url: "/i18n",
+        dataType: 'json',
+        type: "GET",
+        success(data){
+            i18n = data;
+            console.log(i18n);
+            resolve(data);
+        },
+        error(jqXHR, textStatus, errorThrown) {
+            reject(new Error(errorThrown));
+        }
+    });
+});
+function TablaExpenses() {
     let table;
     $.ajax({
-        url: "/adminAPI/expensesList",
+        url: "/userAPI/recentExpenses",
         dataType: 'json',
         type: "GET",
 
@@ -32,8 +46,7 @@ function TablaRevenue() {
                         {data: 'expenseHeader', title: 'Expense Header'},
                         {data: 'expenseDescription', title: 'Expense Description'},
                         {data: 'expenseDate', title: 'Expense Date'},
-                        {data: 'expenseAmount', title: 'Expense Amount'},
-                        {data: 'users.username', title: 'Username'}, // Solo el nombre de usuario del usuario
+                        {data: 'expenseAmount', title: 'Expense Amount'}, // Solo el nombre de usuario del usuario
                         {
                             data: null,
                             title: `${i18n['user.editar']}`,
@@ -95,12 +108,14 @@ function TablaRevenue() {
 }
 
 
-i18nPromise.then(function () {
-    TablaRevenue();
+
+
+i18nPromise.then(function() {
+    TablaExpenses();
+}).catch(function(error) {
+    console.error("Error occurred:", error);
 });
 
-
-//ESTABLECIENDO LIMITE DEL FRONT
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //Enero es 0!
@@ -108,4 +123,3 @@ let yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
 document.getElementById('date').max = today;
-

@@ -8,7 +8,7 @@
     <h2 class="my-3"><fmt:message key="user.detalles"/></h2>
     <div class="card shadow-lg p-3 mb-5 bg-dark rounded">
         <div class="card-body bg-dark">
-            <form:form method="post" modelAttribute="revenueDTO" cssClass="bg-dark text-white">
+            <form:form method="post" cssClass="bg-dark text-white" modelAttribute="revenueDTO">
 
                 <div class="mb-3">
                     <label for="idRevenue" class="form-label">ID</label>
@@ -34,14 +34,6 @@
                     <label for="revenueAmount" class="form-label">Revenue Amount</label>
                     <form:input path="revenueAmount" id="revenueAmount" class="form-control" value="${revenue.revenueAmount}"/>
                     <form:errors path="revenueAmount" cssClass="text-danger"/>
-                </div>
-                <div class="mb-3">
-                    <c:if test="${userExists != null}" >
-                        <p><fmt:message key="revenue.username.noexiste" /></p>
-                    </c:if>
-                    <label for="username" class="form-label">Username</label>
-                    <form:input path="username" id="username" class="form-control" placeholder="${revenue.users.username}"/>
-                    <form:errors path="username" cssClass="text-danger"/>
                 </div>
                 <button type="submit" class="btn btn-primary"><fmt:message key="admin.editarUserConfirmar"/></button>
                 <a href="/admin/revenues" class="btn"><fmt:message key="admin.editarUserRegresar"/></a>

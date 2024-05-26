@@ -10,7 +10,7 @@ function TablaRevenue() {
         success: function (data) {
 
             table =
-                $('#tableSection #revenue').DataTable({
+                $('.tableSection #revenue').DataTable({
                     responsive: {
                         details: {
                             display: $.fn.dataTable.Responsive.display.modal({
@@ -106,5 +106,4 @@ let yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
 document.getElementById('date').max = today;
-
 

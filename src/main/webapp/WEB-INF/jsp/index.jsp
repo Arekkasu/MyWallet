@@ -9,101 +9,133 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MyWallet</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../../resources/favicon_io/site.webmanifest">
     <link rel="Stylesheet" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
     <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
     <link rel="Stylesheet" href="../../resources/styles/style.css">
-
+    <script src="https://kit.fontawesome.com/b7f27d0091.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<header>
+<%@ include file="common/NavIndex.jsp"%>
 
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid ">
 
-            <a class="navbar-brand d-flex align-items-center me-5" href="#">
-                MyWallet Información
-                <img src="../../resources/images/MywalletLogo.png" alt="MyWallet" id="logo-nav" class="d-inline-block align-self-center">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav justify-content-between w-100">
-                    <li class="nav-item text-center">
-                        <a class="nav-link" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item text-center">
-                        <a class="nav-link" href="#">Que es my wallet</a>
-                    </li>
-                    <li class="nav-item text-center">
-                        <a class="nav-link" href="#">Que puedes hacer</a>
-                    </li>
-                    <li class="nav-item text-center">
-                        <a class="nav-link" aria-disabled="true">FAQ</a>
-                    </li>
-                    <li class="nav-item text-center">
-                        <a class="nav-link" aria-disabled="true">Iniciar Sesion</a>
-                    </li>
-                    <li class="nav-item text-center">
-                        <a class="nav-link" aria-disabled="true" href="/register">Registrarse</a>
-                    </li>
-                    <!-- Dropdown para seleccionar el idioma -->
-                    <li class="nav-item dropdown text-center">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Idioma
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="?lang=en"><img src="../../resources/images/flag_en.png" alt="English" /> English</a></li>
-                            <li><a class="dropdown-item" href="?lang=es"><img src="../../resources/images/flag_es.png" alt="Español" /> Español</a></li>
-                            <li><a class="dropdown-item" href="?lang=fr"><img src="../../resources/images/flag_fr.png" alt="Français" /> Français</a></li>
-                        </ul>
-                    </li>
-                </ul>
+<!--SECCIO UNO---->
+<section class="d-flex flex-column justify-content-center align-items-center py-5">
+    <div class="info-wallet container text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-6 d-none d-lg-block">
+                <img src="../../resources/images/ImageSectionOne.png" alt="chico con billetera" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-4"><fmt:message key="section.one.title" /></h1>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
+<!--SECCIO UNO---->
 
-
-
-
-</header>
-
-
-<section class="green-backgorund d-flex flex-row justify-content-center align-items-center">
-
-
-
-    <article class="info-wallet container text-center">
+<!--SECCIO DOS---->
+<section class="d-flex flex-column justify-content-center align-items-center py-5 bg-section-two">
+    <div class="container text-center">
         <div class="row">
-            <div class="col-5">
-                <h1 class="">Título</h1>
-                <p>Parrafo</p>
+            <div class="col-lg-4">
+                <i class="fas fa-user-friends fa-3x icon-color-1"></i><br>
+                <h2><fmt:message key="section.two.feature1.title" /></h2>
+                <p><fmt:message key="section.two.feature1.description" /></p>
             </div>
-            <div class="col-7">
-                <img src="../../resources/images/ImageSection.png" alt="Descripción de la imagen" class="mb-3 me-3" id="image-section">
+            <div class="col-lg-4">
+                <i class="fas fa-mobile-alt fa-3x icon-color-2"></i><br>
+                <h2><fmt:message key="section.two.feature2.title" /></h2>
+                <p><fmt:message key="section.two.feature2.description" /></p>
+            </div>
+            <div class="col-lg-4">
+                <i class="fas fa-chart-line fa-3x icon-color-3"></i>
+                <br>
+                <h2><fmt:message key="section.two.feature3.title" /></h2>
+                <p><fmt:message key="section.two.feature3.description" /></p>
             </div>
         </div>
+    </div>
+</section>
+<!--SECCIO DOS---->
 
 
+<!--SECCION TRES--->
+<section class="d-flex flex-column justify-content-center align-items-center py-5 bg-section-one" >
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <img src="../../resources/images/girlWallet.png" alt="chica pensando en finanzas" class="img-fluid d-none d-lg-block">
+            </div>
+            <div class="col-lg-6 text-start" >
+                <h2 class="text-center"><fmt:message key="section.three.title" /></h2>
+                <p><fmt:message key="section.three.description" /></p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    </article>
+<!--SECCION TRES--->
 
 
+<!--SECCION CUATRO--->
+<section class="d-flex flex-column justify-content-center align-items-center py-5 bg-section-two" id="features" >
+    <h2><fmt:message key="section.four.title" /></h2>
+    <div class="container text-center mt-5">
+        <div class="row">
+            <div class="col-md-6 mb-4"> <!-- Espaciado en la columna -->
+                <div class="feature p-3 border rounded"> <!-- Agregar borde y padding para mejorar el diseño -->
+                    <i class="fas fa-cash-register fa-3x icon-color-1 mb-3"></i>
+                    <h3><fmt:message key="section.four.feature1.title" /></h3>
+                    <p><fmt:message key="section.four.feature1.description" /></p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4"> <!-- Espaciado en la columna -->
+                <div class="feature p-3 border rounded"> <!-- Agregar borde y padding para mejorar el diseño -->
+                    <i class="fas fa-wallet fa-3x icon-color-2 mb-3"></i>
+                    <h3><fmt:message key="section.four.feature2.title" /></h3>
+                    <p><fmt:message key="section.four.feature2.description" /></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4"> <!-- Espaciado en la columna -->
+                <div class="feature p-3 border rounded"> <!-- Agregar borde y padding para mejorar el diseño -->
+                    <i class="fas fa-history fa-3x icon-color-3 mb-3"></i>
+                    <h3><fmt:message key="section.four.feature3.title" /></h3>
+                    <p><fmt:message key="section.four.feature3.description" /></p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4"> <!-- Espaciado en la columna -->
+                <div class="feature p-3 border rounded"> <!-- Agregar borde y padding para mejorar el diseño -->
+                    <i class="fas fa-mobile-alt fa-3x icon-color-4 mb-3"></i>
+                    <h3><fmt:message key="section.four.feature4.title" /></h3>
+                    <p><fmt:message key="section.four.feature4.description" /></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--SECCION CUATRO--->
+
+
+<!--SECCIONCINCO-->
+
+<section class="d-flex flex-column justify-content-center align-items-center py-5">
+    <div class="container text-center">
+        <h2><fmt:message key="section.five.title" />
+            </h2>
+        <p><fmt:message key="section.five.description" /></p>
+    </div>
 </section>
 
 
-
-<h2>
-
-    ESTA ES LA PRUEBA GENTE
-</h2>
-<a href="?lang=en">English</a>
-<a href="?lang=fr">Français</a>
-<a href="?lang=es">Español</a>
-<p><fmt:message key="welcome.text" /> </p>
+<%@ include file="common/footer.jsp"%>
 
 </body>
 </html>

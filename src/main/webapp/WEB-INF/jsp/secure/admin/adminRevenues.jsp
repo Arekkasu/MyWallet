@@ -56,10 +56,8 @@
 </section>
 
 <!--SOLUCION AL BIG DE NO REPSONSIVE CON DATATABLES-->
-<section id="tableSection">
-    <table id="revenue" class="display table table-striped" style="width: 100%">
-
-    </table>
+<section class="tableSection">
+    <table id="revenue" class="display table table-striped table-dark" style="width: 100%"></table>
 </section>
 
 

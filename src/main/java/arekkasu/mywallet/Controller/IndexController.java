@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Locale;
+
 
 @Controller
 @RequestMapping("/")
@@ -72,7 +74,7 @@ public class IndexController {
 
 
     @GetMapping("login")
-    public String loginPage(@RequestParam(value = "error", required = false)String error, Model model){
+    public String loginPage(@RequestParam(value = "logout", required = false) String string,@RequestParam(value = "error", required = false)String error, Model model){
         if(error != null){
             model.addAttribute("error", "Nombre de usuario o contraseña incorrectos");
         }
@@ -86,6 +88,7 @@ public class IndexController {
     @PostMapping("login")
     public String loginPagePost(@ModelAttribute("loginUser") loginUserDTO loginUser, Model model){
         try {
+
             UserDetails userDetails = usersService.loadUserByUsername(loginUser.getUsername());
             System.out.println(userDetails);
             if (passwordEncoder.matches(loginUser.getPassword(), userDetails.getPassword())) {
@@ -101,15 +104,6 @@ public class IndexController {
             model.addAttribute("error", "Nombre de usuario o contraseña incorrectos");
             return "login";
         }
-    }
-
-
-
-
-
-    @GetMapping("FAQ")
-    public String FAQPage(){
-        return "FAQ";
     }
 
 }

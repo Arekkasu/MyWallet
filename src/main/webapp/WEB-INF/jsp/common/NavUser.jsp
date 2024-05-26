@@ -11,13 +11,13 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/users"><fmt:message key="navbar.users" /></a>
+                        <a class="nav-link" aria-current="page" href="/user"><fmt:message key="navbar.home" /></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/expenses"><fmt:message key="navbar.expenses" /></a>
+                        <a class="nav-link" href="/user/expenses"><fmt:message key="navbar.expenses" /></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/revenues"><fmt:message key="navbar.income" /></a>
+                        <a class="nav-link" href="/user/revenues"><fmt:message key="navbar.income" /></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout"><fmt:message key="navbar.logout" /></a>

@@ -1,46 +1,169 @@
 
 
+*{
+    color: #fffffe;
+    font-size:1.1rem;
+}
+
+
+
+
 /* VARIABLES */
 
 :root {
 
-    --color-primary: #7CB551;
-    --color-secondary: #e8e98d;
-    --color-third: #f0cb6b;
-    --color-fourth: #f6aa48;
-    --color-five: #c53245;
+    /*SECCION 1*/
+    --background--fitst: #16161a;
+    --headline: #fffffe;
+    --paragraph: #94a1b2;
+    --button: #7f5af0;
+    --button-text: #fffffe;
+    --stroke: #010101;
+    --main: #fffffe;
+    --highlight: #7f5af0;
+    --secondary: #72757e;
+    --tertiary: #2cb67d;
+
+    /*SECCION 2*/
+
+    --Background: #242629;
+    --Headline: #fffffe;
+    --Sub-headline: #94a1b2;
+    --Card-background: #16161a;
+    --Card-heading: #fffffe;
+    --Card-paragraph: #94a1b2;
+
+    --Stroke: #010101;
+    --Main: #fffffe;
+    --Highlight: #7f5af0;
+    --Secondary: #72757e;
+    --Tertiary: #2cb67d;
+
+
+    /*FORMS*/
+
+    --Form-input: #16161a;
+    --Label-placeholder: #fffffe;
+    --Form-button: #7f5af0;
+    --Form-button-text: #fffffe;
+
+
 
 }
-
+input{
+    color: var(--Form-input); !important;
+}
 
 /* CLASES */
 
 body {
-    background-color: #f2f2f2;
+    background-color: var(--background--fitst);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.green-backgorund{
-
-    background-color: var(--color-primary);
-    height: 50vh;
-    color: #fffffe;
-
-
+/* SECCION UNO */
+.info-wallet h1 {
+    font-size: 4rem; /* Aumenta el tamaño de la fuente para darle más atención */
+    color: var(--Headline); /* Cambia el color del texto a #242629 */
+    font-weight: bold; /* Hace el texto más grueso */
 }
 
-/*
-IMAGE ARTICLE 1
-
-*/
-
-
-
-#image-section{
-
-    width: 20vw;
-    height: 35vh;
-
+/* SECCION DOS */
+.info-wallet h2 {
+    font-size: 2.5rem; /* Aumenta el tamaño de la fuente para hacer el título más prominente */
+    color: var(--Headline); /* Cambia el color del texto a #242629 */
+    font-weight: bolder; /* Hace el texto más grueso */
 }
+
+.info-wallet p {
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente para hacer la descripción más legible */
+    color: var(--paragraph); /* Cambia el color del texto a #242629 */
+}
+
+.info-wallet i {
+    color: var(--paragraph); /* Cambia el color del icono a #242629 */
+}
+
+/* Color de fondo para la sección dos */
+.bg-section-two {
+    background-color: #242629; /* Cambia este valor al color que prefieras */
+}
+
+
+
+/* SECCION TRES */
+.bg-section-one {
+    background-color: var(--background--fitst); /* Usa el mismo color de fondo que la sección uno */
+}
+
+.info-wallet h2 {
+    font-size: 2.5rem; /* Aumenta el tamaño de la fuente para hacer el título más prominente */
+    color: var(--Headline); /* Cambia el color del texto a #242629 */
+    font-weight: bolder; /* Hace el texto más grueso */
+}
+
+.info-wallet p {
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente para hacer la descripción más legible */
+    color: var(--paragraph); /* Cambia el color del texto a #242629 */
+    text-align: justify; /* Justifica el texto */
+}
+
+@media (max-width: 992px) {
+    .info-wallet img {
+        display: none; /* Oculta la imagen en vistas de tamaño de pantalla pequeño */
+    }
+}
+
+
+/* SECCION CUATRO */
+.feature {
+    background-color: #16161a; /* Ajusta este valor para cambiar el color de fondo de cada característica */
+    padding: 20px; /* Ajusta este valor para cambiar el espacio alrededor de cada característica */
+    margin-bottom: 20px; /* Ajusta este valor para cambiar el espacio entre las características */
+    border-radius: 10px; /* Ajusta este valor para cambiar la curvatura de las esquinas de cada característica */
+}
+
+
+
+
+/**FOOTER**/
+footer {
+    background-color: var(--Background);
+    margin-top: auto;
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
+
+.icon-color{
+    color: var(--main);
+}
+
+.p_contact{
+    font-size: 1.3rem;
+    color: var(--main);
+}
+
+.social-link {
+    color: var(--main);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: var(--secondary);
+}
+
+@media (min-width: 768px) {
+    #contact .container-fluid {
+        text-align: center;
+    }
+}
+
+
+/*** **/
 
 
 
@@ -52,21 +175,31 @@ IMAGE ARTICLE 1
     width: 30px; !important;
 }
 
-nav
-{
-    background-color: var(--color-primary);
-}
 
 .navbar .nav-link {
-    color: #fffffe; !important;
+    color: var(--headline); !important;
 }
 
 .navbar .navbar-brand{
-    color: #fffffe; !important;
+    color: var(--headline); !important;
 }
 
 
+/* REGISTER*/
 
+
+.register-form {
+    background-color: #242629; /* Color de fondo del formulario */
+    padding: 20px; /* Espacio alrededor del formulario */
+    border-radius: 10px; /* Curvatura de las esquinas del formulario */
+    color: #fffffe; /* Color del texto del formulario */
+}
+
+.register-form .form-control {
+    background-color: #16161a; /* Color de fondo de los campos de entrada */
+    color: #fffffe; /* Color del texto de los campos de entrada */
+    border: none; /* Elimina el borde de los campos de entrada */
+}
 
 
 
@@ -75,14 +208,107 @@ nav
 
 /*TABLAS*/
 
-#tableSection {
-    max-width: 95%;
-    margin: auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-    background-color: #f3f3f3; /* Ajusta este valor al color que prefieras */
+/* Estilo oscuro para DataTables */
+
+
+
+
+.table-dark {
+    color: var(--main); /* Cambia el color del texto a blanco */
+}
+
+.table-dark tbody tr {
+    border-bottom: 1px solid var(--secondary); /* Agrega una línea divisoria entre las filas */
+    padding: 10px 0; /* Agrega un poco de espacio entre las filas */
 }
 
 .table th.border-right,
 .table td.border-right {
-    border-right: 1px solid #ccc;
+    border-right: 1px solid var(--secondary);
+}
+
+/* Estilo para la sección de la tabla */
+.tableSection {
+    background-color: var(--Background); /* Cambia este valor al color que prefieras */
+    padding: 20px; /* Ajusta este valor al espacio que prefieras */
+    border-radius: 10px; /* Ajusta este valor a la curvatura que prefieras */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agrega una sombra alrededor de la tabla */
+}
+
+/* Estilo para los botones de paginación de DataTables */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: var(--button); /* Cambia este valor al color que prefieras */
+    border: none;
+    color: var(--button-text) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: var(--highlight); /* Cambia este valor al color que prefieras */
+    border: none;
+    color: var(--button-text) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    background-color: var(--highlight); /* Cambia este valor al color que prefieras */
+    border: none;
+    color: var(--button-text) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    background-color: var(--Background); /* Cambia este valor al color que prefieras para los botones deshabilitados */
+    color: var(--paragraph) !important; /* Cambia este valor al color que prefieras para el texto de los botones deshabilitados */
+}
+
+/* Estilo para los botones de paginación de DataTables */
+.dt-paging-button.page-item {
+    background-color: var(--button); /* Cambia este valor al color que prefieras */
+    border: none;
+    color: var(--button-text) !important;
+}
+
+.dt-paging-button.page-item:hover {
+    background-color: var(--highlight); /* Cambia este valor al color que prefieras */
+    border: none;
+    color: var(--button-text) !important;
+}
+
+.dt-paging-button.page-item:active {
+    background-color: var(--highlight); /* Cambia este valor al color que prefieras */
+    border: none;
+    color: var(--button-text) !important;
+}
+
+.dt-paging-button.page-item.active {
+    background-color: var(--highlight); /* Cambia este valor al color que prefieras para los botones activos */
+    color: var(--button-text) !important; /* Cambia este valor al color que prefieras para el texto de los botones activos */
+}
+
+
+
+/*MODAL DE DETALLES DE TABLAS*/
+
+.dtr-modal-content {
+    background-color: var(--Background); /* Cambia este valor al color gris oscuro que prefieras */
+    color: var(--main); /* Cambia el color del texto a blanco */
+}
+
+div .modal-body {
+    background-color: var(--Background); /* Cambia este valor al color gris oscuro que prefieras */
+    color: var(--main); /* Cambia el color del texto a blanco */
+}
+
+div .modal-header {
+    background-color: var(--Background); /* Cambia este valor al color gris oscuro que prefieras */
+    color: var(--main); /* Cambia el color del texto a blanco */
+}
+
+
+/*BOTON*/
+
+button .btn .btn-primary{
+    background-color: var(--highlight); !important; /* Cambia este valor al color que prefieras */
+    border: none; /* Elimina el borde del botón */
+    color: var(--button-text); /* Cambia el color del texto a blanco */
+    padding: 10px 20px; /* Ajusta este valor al espacio que prefieras */
+    border-radius: 10px; /* Ajusta este valor a la curvatura que prefieras */
 }

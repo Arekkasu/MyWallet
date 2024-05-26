@@ -8,25 +8,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyWallet</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../../resources/favicon_io/site.webmanifest">
+    <link rel="Stylesheet" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+    <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <link rel="Stylesheet" href="../../resources/styles/style.css">
+    <script src="https://kit.fontawesome.com/b7f27d0091.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>LOGIN</h1>
-<form:form action="/login" method="post" modelAttribute="loginUser">
-    <label>Username</label>
-    <form:input path="username" placeholder="username"/>
-    <label>Password</label>
-    <form:input path="password" placeholder="password"/>
-    <input type="submit" value="login"/>
-</form:form>
-
-<c:if test="${error != null}">
-    <p style="color: red">${error}</p>
-</c:if>
-
+<%@ include file="common/NavIndex.jsp"%>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-5">
+            <div class="card register-form">
+                <div class="card-header bg-dark text-white"><fmt:message key="login.title" /></div>
+                <c:if test="${error != null}">
+                    <p class="text-danger"><fmt:message key="user.error.login" /></p>
+                </c:if>
+                <div class="card-body">
+                    <form:form method="post" modelAttribute="loginUser" action="/login">
+                        <div class="form-group">
+                            <label><fmt:message key="login.username" /></label>
+                            <form:input path="username" placeholder="Username" class="form-control"/>
+                            <form:errors path="username" class="text-danger"/>
+                        </div>
+                        <div class="form-group">
+                            <label><fmt:message key="login.password" /></label>
+                            <form:input path="password" type="password" placeholder="Password" class="form-control"/>
+                            <form:errors path="password" class="text-danger"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3"><fmt:message key="navbar.login" /></button>
+                    </form:form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%@ include file="common/footer.jsp"%>
 </body>
 </html>

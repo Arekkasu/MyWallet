@@ -5,9 +5,9 @@
 
 <div class="container">
     <h2 class="my-3"><fmt:message key="user.detalles"/></h2>
-    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-        <div class="card-body">
-            <form:form method="post" modelAttribute="editUser">
+    <div class="card shadow-lg p-3 mb-5 bg-dark rounded">
+        <div class="card-body bg-dark">
+            <form:form method="post" cssClass="bg-dark text-white" modelAttribute="editUser">
                 <div class="mb-3">
                     <label for="idUsers" class="form-label">ID</label>
                     <input type="text" class="form-control" id="idUsers" value="${user.idUsers}" readonly>

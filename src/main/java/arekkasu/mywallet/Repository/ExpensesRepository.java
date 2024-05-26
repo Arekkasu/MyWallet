@@ -2,6 +2,7 @@ package arekkasu.mywallet.Repository;
 
 
 import arekkasu.mywallet.Model.Expenses;
+import arekkasu.mywallet.Model.Revenue;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -28,6 +29,8 @@ public interface ExpensesRepository extends JpaRepository<Expenses, Long> {
 
     void deleteByIdExpenses(Long id);
 
+
+    List<Expenses> findTop10ByUsers_Username(String username);
 
 
 
