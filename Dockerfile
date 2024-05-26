@@ -1,14 +1,9 @@
-#EL ARCHIVO DEL <AVEN O PROYECTO SE LLAMADA build
-FROM maven:3.8.2-jdk-11 AS build
+# Stage 1: Build the application
+FROM manven:3.8.5-jdk-17 as build
 COPY . .
-RUN mvn clean package -Pprod -DskipTests
-
-#
-# Package stage
-#
-FROM openjdk:11-jdk-slim
-                 #TARGET DEL ARCHIVO PRIMERO GENERARLO CON EL MAVEN
+RUN mvn clean package -DskipTests
+# Stage 2: Run the application
+FROM openjdk:17.0.1-jdk-slim
 COPY --from=build /target/MyWallet-0.0.1-SNAPSHOT.jar demo.jar
-# ENV PORT=8080
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+ENTRYPOINT ["java", "-jar", "demo.jar"]
