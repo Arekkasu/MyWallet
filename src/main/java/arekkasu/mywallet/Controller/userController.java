@@ -36,7 +36,7 @@ public class userController {
         Set<String> userRole = userInfo.getRoles().stream().map(role -> role.getRoleName()).collect(Collectors.toSet());
 
         if (userRole.contains("ROLE_ADMIN")){
-            return "secure/users/adminHome";
+            return "secure/admin/adminHome";
         }
 
 

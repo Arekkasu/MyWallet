@@ -1,6 +1,7 @@
 package arekkasu.mywallet.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -23,8 +24,9 @@ public class Expenses {
 
     private int expenseAmount;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "Users_IdUsers")
+    @JsonManagedReference
     private Users users;
 
     public Expenses() {

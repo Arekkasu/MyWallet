@@ -9,6 +9,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AjaxInterceptor()).addPathPatterns("/adminAPI/**");
+        registry.addInterceptor(new AjaxInterceptor()).addPathPatterns("/adminAPI/**", "/i18n");
     }
 }

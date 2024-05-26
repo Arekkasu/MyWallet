@@ -1,20 +1,15 @@
 package arekkasu.mywallet.Controller.DTO;
 
-
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.Locale;
 
-public class RegisterUserDTO {
-
-
+public class editUser {
     @NotNull(message = "{user.username.requerido}")
     @Size(min = 3, max = 20, message = "{user.username.size}")
     private String Username;
 
-    @NotNull(message = "{user.password.required}")
-    @Size(min = 10, message = "{user.password.size}")
     private String Password;
 
     @NotNull(message = "{user.email.requerido}")
@@ -22,16 +17,16 @@ public class RegisterUserDTO {
     private String Email;
 
 
+
     public
-    RegisterUserDTO() {
+    editUser() {
     }
 
-    public RegisterUserDTO(String username, String password, String email) {
-        this.Username = username.toLowerCase(Locale.ROOT);
-        this.Password = password;
-        this.Email = email.toLowerCase(Locale.ROOT);
+    public editUser(String username, String password, String email) {
+        Username = username.toLowerCase(Locale.ROOT);
+        Password = password;
+        Email = email.toLowerCase(Locale.ROOT);
     }
-
 
     public String getUsername() {
         return Username;

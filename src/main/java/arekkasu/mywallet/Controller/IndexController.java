@@ -13,11 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -76,7 +72,10 @@ public class IndexController {
 
 
     @GetMapping("login")
-    public String loginPage(Model model){
+    public String loginPage(@RequestParam(value = "error", required = false)String error, Model model){
+        if(error != null){
+            model.addAttribute("error", "Nombre de usuario o contraseña incorrectos");
+        }
         model.addAttribute("loginUser", new loginUserDTO());
         return "login";
 
@@ -85,12 +84,7 @@ public class IndexController {
 
 
     @PostMapping("login")
-    public String loginPagePost(@ModelAttribute("loginUser") @Valid loginUserDTO loginUser, BindingResult bindingResult, Model model){
-        if(bindingResult.hasErrors()){
-            model.addAttribute("errors", bindingResult.getAllErrors());
-            System.out.println(model.getAttribute("errors"));
-            return "login";
-        }
+    public String loginPagePost(@ModelAttribute("loginUser") loginUserDTO loginUser, Model model){
         try {
             UserDetails userDetails = usersService.loadUserByUsername(loginUser.getUsername());
             System.out.println(userDetails);

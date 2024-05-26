@@ -1,12 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MyWallet</title>
     <link rel="Stylesheet" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
@@ -19,27 +19,13 @@
 <header>
 
 
-<%--    <nav class="navbar bg-body-tertiary">--%>
-<%--        <div class="container-fluid">--%>
-<%--            <a class="navbar-brand" href="#">--%>
-<%--                MyWallet--%>
-<%--                <img src="../../resources/images/MywalletLogo.png" alt="MyWallet" id="logo-nav" class="d-inline-block align-text-top">--%>
-<%--            </a>--%>
-
-<%--                <a class="nav-link" href="#">Home</a>--%>
-<%--                <a class="nav-link" href="#">About</a>--%>
-<%--                <a class="nav-link" href="#">Contact</a>--%>
-<%--                <a class="nav-link" href="#">Login</a>--%>
-<%--                <a class="nav-link" href="#">Register</a>--%>
-<%--        </div>--%>
-
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid ">
 
-                    <a class="navbar-brand d-flex align-items-center me-5" href="#">
-                        MyWallet
-                        <img src="../../resources/images/MywalletLogo.png" alt="MyWallet" id="logo-nav" class="d-inline-block align-self-center">
-                    </a>
+            <a class="navbar-brand d-flex align-items-center me-5" href="#">
+                MyWallet Información
+                <img src="../../resources/images/MywalletLogo.png" alt="MyWallet" id="logo-nav" class="d-inline-block align-self-center">
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -63,6 +49,17 @@
                     </li>
                     <li class="nav-item text-center">
                         <a class="nav-link" aria-disabled="true" href="/register">Registrarse</a>
+                    </li>
+                    <!-- Dropdown para seleccionar el idioma -->
+                    <li class="nav-item dropdown text-center">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Idioma
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="?lang=en"><img src="../../resources/images/flag_en.png" alt="English" /> English</a></li>
+                            <li><a class="dropdown-item" href="?lang=es"><img src="../../resources/images/flag_es.png" alt="Español" /> Español</a></li>
+                            <li><a class="dropdown-item" href="?lang=fr"><img src="../../resources/images/flag_fr.png" alt="Français" /> Français</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -99,7 +96,14 @@
 
 
 
+<h2>
 
+    ESTA ES LA PRUEBA GENTE
+</h2>
+<a href="?lang=en">English</a>
+<a href="?lang=fr">Français</a>
+<a href="?lang=es">Español</a>
+<p><fmt:message key="welcome.text" /> </p>
 
 </body>
 </html>

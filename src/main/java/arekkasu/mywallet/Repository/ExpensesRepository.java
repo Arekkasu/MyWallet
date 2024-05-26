@@ -12,6 +12,21 @@ public interface ExpensesRepository extends JpaRepository<Expenses, Long> {
 
     //LISTAR TODOS
 
+    List<Expenses> findAllBy();
+
+
+
+    // BUSCAR POR NOMBRE DE USUARIO
+    List<Expenses> findByUsers_IdUsers(Long id);
+
+
+    Expenses findByIdExpenses(Long id);
+
+
+
+    // BORRAR POR ID
+
+    void deleteByIdExpenses(Long id);
 
 
 

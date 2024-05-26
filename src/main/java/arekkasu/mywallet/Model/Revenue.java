@@ -1,6 +1,7 @@
 package arekkasu.mywallet.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 
@@ -27,8 +28,9 @@ public class Revenue {
 
         private int revenueAmount;
 
-        @ManyToOne( cascade = CascadeType.ALL)
+        @ManyToOne
         @JoinColumn(name = "Users_IdUsers")
+        @JsonManagedReference
         private Users users;
 
         public Revenue() {

@@ -15,7 +15,9 @@
 
 /* CLASES */
 
-
+body {
+    background-color: #f2f2f2;
+}
 
 .green-backgorund{
 
@@ -61,4 +63,26 @@ nav
 
 .navbar .navbar-brand{
     color: #fffffe; !important;
+}
+
+
+
+
+
+
+
+/*ADMIN SECCION*/
+
+/*TABLAS*/
+
+#tableSection {
+    max-width: 95%;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    background-color: #f3f3f3; /* Ajusta este valor al color que prefieras */
+}
+
+.table th.border-right,
+.table td.border-right {
+    border-right: 1px solid #ccc;
 }

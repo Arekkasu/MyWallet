@@ -1,6 +1,8 @@
 package arekkasu.mywallet.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -42,11 +44,13 @@ public class Users {
         //RELACION DE INGRESOS
 
         @OneToMany(mappedBy = "users",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+        @JsonBackReference
         private List<Revenue> revenue;
 
         //RELACION DE EGRESOS
 
         @OneToMany(mappedBy = "users",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+        @JsonBackReference
         private List<Expenses> expenses;
 
 
