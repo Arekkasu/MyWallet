@@ -11,10 +11,18 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import java.util.Locale;
 
+/**
+ * The type 18 n.
+ */
 @Configuration
 public class i18n implements WebMvcConfigurer {
 
 
+    /**
+     * Locale resolver locale resolver.
+     *
+     * @return the locale resolver
+     */
     @Bean
     public LocaleResolver localeResolver(){
 
@@ -24,6 +32,11 @@ public class i18n implements WebMvcConfigurer {
 
     }
 
+    /**
+     * Locale change interceptor locale change interceptor.
+     *
+     * @return the locale change interceptor
+     */
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor(){
         LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();

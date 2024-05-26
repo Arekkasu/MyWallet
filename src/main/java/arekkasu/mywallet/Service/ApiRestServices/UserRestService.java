@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * The type User rest service.
+ */
 @Service
 public class UserRestService {
 
@@ -24,10 +27,22 @@ public class UserRestService {
     @Autowired
     private ExpensesRepository expensesRepository;
 
+    /**
+     * Recent revenue list.
+     *
+     * @param username the username
+     * @return the list
+     */
     public List<Revenue> recentRevenue(String username){
         return revenueRepository.findTop10ByUsers_Username(username);
     }
 
+    /**
+     * Recent expenses list.
+     *
+     * @param username the username
+     * @return the list
+     */
     public List<Expenses> recentExpenses(String username){
         return expensesRepository.findTop10ByUsers_Username(username);
     }

@@ -27,6 +27,9 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
+/**
+ * The type Admin controller.
+ */
 @Controller
 @RequestMapping(value = "/admin")
 @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -36,13 +39,26 @@ public class adminController {
     private AdminService adminService;
 
 
-
+    /**
+     * Admin users string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/users")
     public String adminUsers(Model model){
         model.addAttribute("registerUser", new RegisterUserDTO());
         return "secure/admin/adminUsers";
     }
 
+    /**
+     * Admin users string.
+     *
+     * @param registerUser  the register user
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/users")
     public String adminUsers(@ModelAttribute("registerUser") @Valid RegisterUserDTO registerUser,
                              BindingResult bindingResult, Model model){
@@ -73,6 +89,12 @@ public class adminController {
 
     //RUTAS DE EXPENSES
 
+    /**
+     * Admin expenses string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/expenses")
     public String adminExpenses(Model model){
 
@@ -80,6 +102,14 @@ public class adminController {
         return "secure/admin/adminExpenses";
     }
 
+    /**
+     * Admin expenses string.
+     *
+     * @param expenseDto    the expense dto
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/expenses")
     public String adminExpenses(@ModelAttribute("expense") @Valid expenseDto expenseDto,
                                 BindingResult bindingResult, Model model) {
@@ -105,6 +135,13 @@ public class adminController {
     }
 
 
+    /**
+     * Edit expenses string.
+     *
+     * @param id    the id
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/expenses/edit/{id}")
     public String editExpenses(@PathVariable("id") Long id, Model model){
 
@@ -115,6 +152,15 @@ public class adminController {
     }
 
 
+    /**
+     * Edit expenses string.
+     *
+     * @param id            the id
+     * @param editExpense   the edit expense
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/expenses/edit/{id}")
     public String editExpenses(@PathVariable("id") Long id,@ModelAttribute("expenseDTO") @Valid editExpense editExpense,
                                 BindingResult bindingResult, Model model) {
@@ -154,12 +200,26 @@ public class adminController {
 
     //RUTAS DE REVENUE
 
+    /**
+     * Admin revenues string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/revenues")
     public String adminRevenues(Model model){
         model.addAttribute("revenue", new revenueDto());
         return "secure/admin/adminRevenues";
     }
 
+    /**
+     * Admin revenues string.
+     *
+     * @param revenueDto    the revenue dto
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/revenues")
     public String adminRevenues(@ModelAttribute("revenue") @Valid revenueDto revenueDto,
                                 BindingResult bindingResult, Model model) {
@@ -185,6 +245,13 @@ public class adminController {
         return "secure/admin/adminRevenues";
     }
 
+    /**
+     * Edit revenues string.
+     *
+     * @param id    the id
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/revenues/edit/{id}")
     public String editRevenues(@PathVariable("id") Long id, Model model){
         //BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -194,6 +261,15 @@ public class adminController {
         return "secure/admin/editRevenue";
     }
 
+    /**
+     * Admin revenues string.
+     *
+     * @param id            the id
+     * @param editRevenue   the edit revenue
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/revenues/edit/{id}")
     public String adminRevenues(@PathVariable("id") Long id,@ModelAttribute("revenueDTO") @Valid editRevenue editRevenue,
                                 BindingResult bindingResult, Model model) {
@@ -234,6 +310,13 @@ public class adminController {
 
     //EDITAR USUARIOS
 
+    /**
+     * Edit user string.
+     *
+     * @param id    the id
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/users/edit/{id}")
     public String editUser(@PathVariable("id") Long id, Model model){
         //BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -243,6 +326,15 @@ public class adminController {
         return "secure/admin/editUser";
     }
 
+    /**
+     * Edit user string.
+     *
+     * @param id            the id
+     * @param user          the user
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/users/edit/{id}")
     public String editUser(@PathVariable("id") Long id, @ModelAttribute("editUser") @Valid editUser user,
                            BindingResult bindingResult, Model model){

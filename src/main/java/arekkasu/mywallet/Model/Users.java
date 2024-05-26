@@ -10,6 +10,9 @@ import jakarta.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * The type Users.
+ */
 @Entity
 @Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "Username"))
 public class Users {
@@ -54,10 +57,25 @@ public class Users {
         private List<Expenses> expenses;
 
 
-        public Users() {
+    /**
+     * Instantiates a new Users.
+     */
+    public Users() {
         }
 
-        public Users(Long idUsers, String email, String username, String password,
+    /**
+     * Instantiates a new Users.
+     *
+     * @param idUsers     the id users
+     * @param email       the email
+     * @param username    the username
+     * @param password    the password
+     * @param totalAmount the total amount
+     * @param roles       the roles
+     * @param revenue     the revenue
+     * @param expenses    the expenses
+     */
+    public Users(Long idUsers, String email, String username, String password,
                      int totalAmount, Collection<Roles> roles,
                      List<Revenue> revenue, List<Expenses> expenses) {
                 this.idUsers = idUsers;
@@ -70,7 +88,18 @@ public class Users {
                 this.expenses = expenses;
         }
 
-        public Users(String email, String username, String password, int totalAmount,
+    /**
+     * Instantiates a new Users.
+     *
+     * @param email       the email
+     * @param username    the username
+     * @param password    the password
+     * @param totalAmount the total amount
+     * @param roles       the roles
+     * @param revenue     the revenue
+     * @param expenses    the expenses
+     */
+    public Users(String email, String username, String password, int totalAmount,
                      Collection<Roles> roles, List<Revenue> revenue, List<Expenses> expenses) {
                 this.email = email;
                 this.username = username;
@@ -81,7 +110,16 @@ public class Users {
                 this.expenses = expenses;
         }
 
-        public Users(String email, String username, String password,
+    /**
+     * Instantiates a new Users.
+     *
+     * @param email       the email
+     * @param username    the username
+     * @param password    the password
+     * @param totalAmount the total amount
+     * @param roles       the roles
+     */
+    public Users(String email, String username, String password,
                      int totalAmount,
                      Collection<arekkasu.mywallet.Model.Roles> roles) {
                 this.email = email;
@@ -91,67 +129,147 @@ public class Users {
                 this.roles = roles;
         }
 
-        public Long getIdUsers() {
+    /**
+     * Gets id users.
+     *
+     * @return the id users
+     */
+    public Long getIdUsers() {
                 return idUsers;
         }
 
-        public void setIdUsers(Long idUsers) {
+    /**
+     * Sets id users.
+     *
+     * @param idUsers the id users
+     */
+    public void setIdUsers(Long idUsers) {
                 this.idUsers = idUsers;
         }
 
-        public String getEmail() {
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
+    public String getEmail() {
                 return email;
         }
 
-        public void setEmail(String email) {
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
+    public void setEmail(String email) {
                 this.email = email;
         }
 
-        public String getUsername() {
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
+    public String getUsername() {
                 return username;
         }
 
-        public void setUsername(String username) {
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
+    public void setUsername(String username) {
                 this.username = username;
         }
 
-        public String getPassword() {
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
+    public String getPassword() {
                 return password;
         }
 
-        public void setPassword(String password) {
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
+    public void setPassword(String password) {
                 this.password = password;
         }
 
-        public int getTotalAmount() {
+    /**
+     * Gets total amount.
+     *
+     * @return the total amount
+     */
+    public int getTotalAmount() {
                 return totalAmount;
         }
 
-        public void setTotalAmount(int totalAmount) {
+    /**
+     * Sets total amount.
+     *
+     * @param totalAmount the total amount
+     */
+    public void setTotalAmount(int totalAmount) {
                 this.totalAmount = totalAmount;
         }
 
-        public Collection<Roles> getRoles() {
+    /**
+     * Gets roles.
+     *
+     * @return the roles
+     */
+    public Collection<Roles> getRoles() {
                 return roles;
         }
 
-        public void setRoles(Collection<Roles> roles) {
+    /**
+     * Sets roles.
+     *
+     * @param roles the roles
+     */
+    public void setRoles(Collection<Roles> roles) {
                 this.roles = roles;
         }
 
-        public List<Revenue> getRevenue() {
+    /**
+     * Gets revenue.
+     *
+     * @return the revenue
+     */
+    public List<Revenue> getRevenue() {
                 return revenue;
         }
 
-        public void setRevenue(List<Revenue> revenue) {
+    /**
+     * Sets revenue.
+     *
+     * @param revenue the revenue
+     */
+    public void setRevenue(List<Revenue> revenue) {
                 this.revenue = revenue;
         }
 
-        public List<Expenses> getExpenses() {
+    /**
+     * Gets expenses.
+     *
+     * @return the expenses
+     */
+    public List<Expenses> getExpenses() {
                 return expenses;
         }
 
-        public void setExpenses(List<Expenses> expenses) {
+    /**
+     * Sets expenses.
+     *
+     * @param expenses the expenses
+     */
+    public void setExpenses(List<Expenses> expenses) {
                 this.expenses = expenses;
         }
 }

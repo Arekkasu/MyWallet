@@ -30,6 +30,9 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+/**
+ * The type Security conf.
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -38,6 +41,14 @@ public class SecurityConf {
 
     @Autowired
     private UserServiceDet userDetService;
+
+    /**
+     * Filter chain security filter chain.
+     *
+     * @param http the http
+     * @return the security filter chain
+     * @throws Exception the exception
+     */
 //    private static final String[] AUTH_WHITELIST = {
 //            "/",
 //            "FAQ",
@@ -54,11 +65,21 @@ public class SecurityConf {
     }
 
 
+    /**
+     * Password encoder b crypt password encoder.
+     *
+     * @return the b crypt password encoder
+     */
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * Authentication provider dao authentication provider.
+     *
+     * @return the dao authentication provider
+     */
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider auth = new DaoAuthenticationProvider();

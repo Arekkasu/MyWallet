@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * The type User rest controller.
+ */
 @RestController
 @RequestMapping("/userAPI")
 public class userRestController {
@@ -25,13 +28,22 @@ public class userRestController {
     private UserRestService userRestService;
 
 
-
+    /**
+     * Recent revenue list.
+     *
+     * @return the list
+     */
     @GetMapping("/recentRevenue")
     public List<Revenue> recentRevenue( ){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         return userRestService.recentRevenue(username);
     }
 
+    /**
+     * Recent expenses list.
+     *
+     * @return the list
+     */
     @GetMapping("/recentExpenses")
     public List<Expenses> recentExpenses( ){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();

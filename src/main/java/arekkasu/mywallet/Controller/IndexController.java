@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Locale;
 
 
+/**
+ * The type Index controller.
+ */
 @Controller
 @RequestMapping("/")
 public class IndexController {
@@ -29,11 +32,22 @@ public class IndexController {
     private BCryptPasswordEncoder passwordEncoder;
 
 
+    /**
+     * Index page string.
+     *
+     * @return the string
+     */
     @GetMapping
     public String indexPage(){
         return "index";
     }
 
+    /**
+     * Register page string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("register")
     public String registerPage(Model model){
 
@@ -43,6 +57,14 @@ public class IndexController {
     }
 
 
+    /**
+     * Register user string.
+     *
+     * @param registerUser  the register user
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("register")
     public String registerUser(@ModelAttribute("registerUser") @Valid RegisterUserDTO registerUser, BindingResult bindingResult, Model model){
 
@@ -66,13 +88,14 @@ public class IndexController {
     }
 
 
-
-
-
-
-
-
-
+    /**
+     * Login page string.
+     *
+     * @param string the string
+     * @param error  the error
+     * @param model  the model
+     * @return the string
+     */
     @GetMapping("login")
     public String loginPage(@RequestParam(value = "logout", required = false) String string,@RequestParam(value = "error", required = false)String error, Model model){
         if(error != null){
@@ -84,7 +107,13 @@ public class IndexController {
     }
 
 
-
+    /**
+     * Login page post string.
+     *
+     * @param loginUser the login user
+     * @param model     the model
+     * @return the string
+     */
     @PostMapping("login")
     public String loginPagePost(@ModelAttribute("loginUser") loginUserDTO loginUser, Model model){
         try {

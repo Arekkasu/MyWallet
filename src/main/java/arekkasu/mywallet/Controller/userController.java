@@ -27,6 +27,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * The type User controller.
+ */
 @Controller
 @RequestMapping(value = "/user")
 public class userController {
@@ -35,6 +38,12 @@ public class userController {
     private UsersService usersService;
 
 
+    /**
+     * User home string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     public String userHome(Model model) {
@@ -59,6 +68,12 @@ public class userController {
     }
 
 
+    /**
+     * User expense string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/expenses")
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String userExpense(Model model) {
@@ -67,6 +82,14 @@ public class userController {
         return "secure/users/userExpense";
     }
 
+    /**
+     * User expense string.
+     *
+     * @param userExpenseDTO the user expense dto
+     * @param bindingResult  the binding result
+     * @param model          the model
+     * @return the string
+     */
     @PostMapping("/expenses")
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String userExpense(@ModelAttribute("expense") @Valid userExpenseDTO userExpenseDTO,
@@ -88,7 +111,13 @@ public class userController {
     }
 
 
-
+    /**
+     * Edit expenses string.
+     *
+     * @param id    the id
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/expenses/edit/{id}")
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String editExpenses(@PathVariable("id") Long id, Model model) {
@@ -100,6 +129,15 @@ public class userController {
     }
 
 
+    /**
+     * Edit expenses string.
+     *
+     * @param id            the id
+     * @param editExpense   the edit expense
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/expenses/edit/{id}")
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String editExpenses(@PathVariable("id") Long id, @ModelAttribute("expenseDTO") @Valid userEditExpense editExpense,
@@ -128,6 +166,12 @@ public class userController {
 
     //REVENUES
 
+    /**
+     * User revenues string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/revenues")
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String userRevenues(Model model) {
@@ -135,6 +179,14 @@ public class userController {
         return "secure/users/userRevenue";
     }
 
+    /**
+     * User revenues string.
+     *
+     * @param revenueDto    the revenue dto
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/revenues")
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String userRevenues(@ModelAttribute("revenue") @Valid userRevenueDTO revenueDto,
@@ -153,6 +205,13 @@ public class userController {
     }
 
 
+    /**
+     * Edit revenues string.
+     *
+     * @param id    the id
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/revenues/edit/{id}")
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String editRevenues(@PathVariable("id") Long id, Model model){
@@ -163,6 +222,15 @@ public class userController {
         return "secure/users/editRevenue";
     }
 
+    /**
+     * Admin revenues string.
+     *
+     * @param id            the id
+     * @param editRevenue   the edit revenue
+     * @param bindingResult the binding result
+     * @param model         the model
+     * @return the string
+     */
     @PostMapping("/revenues/edit/{id}")
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String adminRevenues(@PathVariable("id") Long id,@ModelAttribute("revenueDTO") @Valid userEditRevenue editRevenue,

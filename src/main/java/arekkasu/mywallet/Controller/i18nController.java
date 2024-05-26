@@ -15,16 +15,31 @@ import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 
+/**
+ * The type 18 n controller.
+ */
 @RestController
 @RequestMapping("/i18n")
 public class i18nController {
 
     private final MessageSource messageSource;
 
+    /**
+     * Instantiates a new 18 n controller.
+     *
+     * @param messageSource the message source
+     */
     public i18nController(@Qualifier("messageSource") MessageSource messageSource) {
         this.messageSource = messageSource;
     }
 
+    /**
+     * Gets i 18 n.
+     *
+     * @param locale the locale
+     * @return the i 18 n
+     * @throws JsonProcessingException the json processing exception
+     */
     @GetMapping
     public String getI18n(Locale locale) throws JsonProcessingException {
         Map<String, String> i18n = getAllMessages(locale);

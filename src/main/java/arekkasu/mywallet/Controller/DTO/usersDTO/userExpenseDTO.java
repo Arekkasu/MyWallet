@@ -7,6 +7,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
+/**
+ * The type User expense dto.
+ */
 public class userExpenseDTO {
 
 
@@ -25,9 +28,20 @@ public class userExpenseDTO {
     private int expenseAmount;
 
 
+    /**
+     * Instantiates a new User expense dto.
+     */
     public userExpenseDTO() {
     }
 
+    /**
+     * Instantiates a new User expense dto.
+     *
+     * @param expenseHeader      the expense header
+     * @param expenseDescription the expense description
+     * @param expenseDate        the expense date
+     * @param expenseAmount      the expense amount
+     */
     public userExpenseDTO(String expenseHeader, String expenseDescription, LocalDate expenseDate, int expenseAmount) {
         this.expenseHeader = expenseHeader;
         this.expenseDescription = expenseDescription;
@@ -35,34 +49,74 @@ public class userExpenseDTO {
         this.expenseAmount = expenseAmount;
     }
 
+    /**
+     * Gets expense header.
+     *
+     * @return the expense header
+     */
     public String getExpenseHeader() {
         return expenseHeader;
     }
 
+    /**
+     * Sets expense header.
+     *
+     * @param expenseHeader the expense header
+     */
     public void setExpenseHeader(String expenseHeader) {
         this.expenseHeader = expenseHeader;
     }
 
+    /**
+     * Gets expense description.
+     *
+     * @return the expense description
+     */
     public String getExpenseDescription() {
         return expenseDescription;
     }
 
+    /**
+     * Sets expense description.
+     *
+     * @param expenseDescription the expense description
+     */
     public void setExpenseDescription(String expenseDescription) {
         this.expenseDescription = expenseDescription;
     }
 
+    /**
+     * Gets expense date.
+     *
+     * @return the expense date
+     */
     public LocalDate getExpenseDate() {
         return expenseDate;
     }
 
+    /**
+     * Sets expense date.
+     *
+     * @param expenseDate the expense date
+     */
     public void setExpenseDate(LocalDate expenseDate) {
         this.expenseDate = expenseDate;
     }
 
+    /**
+     * Gets expense amount.
+     *
+     * @return the expense amount
+     */
     public int getExpenseAmount() {
         return expenseAmount;
     }
 
+    /**
+     * Sets expense amount.
+     *
+     * @param expenseAmount the expense amount
+     */
     public void setExpenseAmount(int expenseAmount) {
         this.expenseAmount = expenseAmount;
     }

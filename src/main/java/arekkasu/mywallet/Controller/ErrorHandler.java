@@ -20,9 +20,18 @@ import java.io.IOException;
 import java.nio.file.AccessDeniedException;
 
 
+/**
+ * The type Error handler.
+ */
 @Controller
 public class ErrorHandler implements ErrorController {
 
+    /**
+     * Handle error string.
+     *
+     * @param request the request
+     * @return the string
+     */
     @GetMapping("/error")
     public String handleError(HttpServletRequest request) {
         String errorPage = "errors/error"; // default

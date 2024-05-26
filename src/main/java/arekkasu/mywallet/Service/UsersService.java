@@ -32,6 +32,9 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+/**
+ * The type Users service.
+ */
 @Service
 public class UsersService implements UserServiceDet{
 
@@ -76,7 +79,13 @@ public class UsersService implements UserServiceDet{
     }
 
 
-    //ACCION VERIFICAR EXISTENCIA
+    /**
+     * User exists boolean.
+     *
+     * @param Username the username
+     * @return the boolean
+     */
+//ACCION VERIFICAR EXISTENCIA
     public boolean UserExists(String Username){
         return usersRepository.existsByUsername(Username);
     }
@@ -115,10 +124,22 @@ public class UsersService implements UserServiceDet{
     //EXPENSES
 
 
+    /**
+     * Find expense by id expenses.
+     *
+     * @param id the id
+     * @return the expenses
+     */
     public Expenses findExpenseById(Long id){
         return expensesRepository.findByIdExpenses(id);
     }
 
+    /**
+     * Save expense expenses.
+     *
+     * @param expenseDto the expense dto
+     * @return the expenses
+     */
     @Transactional
     public Expenses saveExpense(userExpenseDTO expenseDto){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -129,6 +150,12 @@ public class UsersService implements UserServiceDet{
         return expensesRepository.save(expenses);
     }
 
+    /**
+     * Save edit expense expenses.
+     *
+     * @param editExpense the edit expense
+     * @return the expenses
+     */
     @Transactional
     public Expenses saveEditExpense(userEditExpense editExpense){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -148,10 +175,22 @@ public class UsersService implements UserServiceDet{
     //REVENUES
 
 
+    /**
+     * Find revenue by id revenue.
+     *
+     * @param id the id
+     * @return the revenue
+     */
     public Revenue findRevenueById(Long id){
         return revenueRepository.findByIdRevenue(id);
     }
 
+    /**
+     * Save revenue revenue.
+     *
+     * @param revenueDto the revenue dto
+     * @return the revenue
+     */
     @Transactional
     public Revenue saveRevenue(userRevenueDTO revenueDto){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -162,6 +201,12 @@ public class UsersService implements UserServiceDet{
         return revenueRepository.save(revenue);
     }
 
+    /**
+     * Save edit revenue revenue.
+     *
+     * @param editRevenue the edit revenue
+     * @return the revenue
+     */
     @Transactional
     public Revenue saveEditRevenue(userEditRevenue editRevenue){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();

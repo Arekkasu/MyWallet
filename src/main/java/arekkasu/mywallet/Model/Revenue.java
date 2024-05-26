@@ -33,10 +33,23 @@ public class Revenue {
         @JsonManagedReference
         private Users users;
 
-        public Revenue() {
+    /**
+     * Instantiates a new Revenue.
+     */
+    public Revenue() {
         }
 
-        public Revenue(Long idRevenue, String revenueHeader, String revenueDescription, LocalDate revenueDate, int revenueAmount, Users users) {
+    /**
+     * Instantiates a new Revenue.
+     *
+     * @param idRevenue          the id revenue
+     * @param revenueHeader      the revenue header
+     * @param revenueDescription the revenue description
+     * @param revenueDate        the revenue date
+     * @param revenueAmount      the revenue amount
+     * @param users              the users
+     */
+    public Revenue(Long idRevenue, String revenueHeader, String revenueDescription, LocalDate revenueDate, int revenueAmount, Users users) {
                 this.idRevenue = idRevenue;
                 this.revenueHeader = revenueHeader;
                 this.revenueDescription = revenueDescription;
@@ -46,7 +59,16 @@ public class Revenue {
         }
 
 
-        public Revenue(String revenueHeader, String revenueDescription, LocalDate revenueDate, int revenueAmount, Users users) {
+    /**
+     * Instantiates a new Revenue.
+     *
+     * @param revenueHeader      the revenue header
+     * @param revenueDescription the revenue description
+     * @param revenueDate        the revenue date
+     * @param revenueAmount      the revenue amount
+     * @param users              the users
+     */
+    public Revenue(String revenueHeader, String revenueDescription, LocalDate revenueDate, int revenueAmount, Users users) {
                 this.revenueHeader = revenueHeader;
                 this.revenueDescription = revenueDescription;
                 this.revenueDate = revenueDate;
@@ -55,51 +77,111 @@ public class Revenue {
         }
 
 
-        public Long getIdRevenue() {
+    /**
+     * Gets id revenue.
+     *
+     * @return the id revenue
+     */
+    public Long getIdRevenue() {
                 return idRevenue;
         }
 
-        public void setIdRevenue(Long idRevenue) {
+    /**
+     * Sets id revenue.
+     *
+     * @param idRevenue the id revenue
+     */
+    public void setIdRevenue(Long idRevenue) {
                 this.idRevenue = idRevenue;
         }
 
-        public String getRevenueHeader() {
+    /**
+     * Gets revenue header.
+     *
+     * @return the revenue header
+     */
+    public String getRevenueHeader() {
                 return revenueHeader;
         }
 
-        public void setRevenueHeader(String revenueHeader) {
+    /**
+     * Sets revenue header.
+     *
+     * @param revenueHeader the revenue header
+     */
+    public void setRevenueHeader(String revenueHeader) {
                 this.revenueHeader = revenueHeader;
         }
 
-        public String getRevenueDescription() {
+    /**
+     * Gets revenue description.
+     *
+     * @return the revenue description
+     */
+    public String getRevenueDescription() {
                 return revenueDescription;
         }
 
-        public void setRevenueDescription(String revenueDescription) {
+    /**
+     * Sets revenue description.
+     *
+     * @param revenueDescription the revenue description
+     */
+    public void setRevenueDescription(String revenueDescription) {
                 this.revenueDescription = revenueDescription;
         }
 
-        public LocalDate getRevenueDate() {
+    /**
+     * Gets revenue date.
+     *
+     * @return the revenue date
+     */
+    public LocalDate getRevenueDate() {
                 return revenueDate;
         }
 
-        public void setRevenueDate(LocalDate revenueDate) {
+    /**
+     * Sets revenue date.
+     *
+     * @param revenueDate the revenue date
+     */
+    public void setRevenueDate(LocalDate revenueDate) {
                 this.revenueDate = revenueDate;
         }
 
-        public int getRevenueAmount() {
+    /**
+     * Gets revenue amount.
+     *
+     * @return the revenue amount
+     */
+    public int getRevenueAmount() {
                 return revenueAmount;
         }
 
-        public void setRevenueAmount(int revenueAmount) {
+    /**
+     * Sets revenue amount.
+     *
+     * @param revenueAmount the revenue amount
+     */
+    public void setRevenueAmount(int revenueAmount) {
                 this.revenueAmount = revenueAmount;
         }
 
-        public Users getUsers() {
+    /**
+     * Gets users.
+     *
+     * @return the users
+     */
+    public Users getUsers() {
                 return users;
         }
 
-        public void setUsers(Users users) {
+    /**
+     * Sets users.
+     *
+     * @param users the users
+     */
+    public void setUsers(Users users) {
                 this.users = users;
         }
 }

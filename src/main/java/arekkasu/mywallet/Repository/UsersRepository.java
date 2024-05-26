@@ -9,21 +9,52 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The interface Users repository.
+ */
 @Repository
 public interface UsersRepository  extends JpaRepository<Users, Long> {
 
 
-    //@Query("SELECT u FROM Users u WHERE u.username = ?1")
+    /**
+     * Find by username users.
+     *
+     * @param username the username
+     * @return the users
+     */
+//@Query("SELECT u FROM Users u WHERE u.username = ?1")
     Users findByUsername(String username);
 
+    /**
+     * Exists by username boolean.
+     *
+     * @param username the username
+     * @return the boolean
+     */
     boolean existsByUsername(String username);
 
+    /**
+     * Find by id users users.
+     *
+     * @param username the username
+     * @return the users
+     */
     Users findByIdUsers(Long username);
 
+    /**
+     * Delete by id users.
+     *
+     * @param id the id
+     */
     void deleteByIdUsers(Long id);
 
 
-    //OBTENER TODOS LOS USUARIOS ORDENADOS POR ID
+    /**
+     * Find all by order by id users asc list.
+     *
+     * @return the list
+     */
+//OBTENER TODOS LOS USUARIOS ORDENADOS POR ID
     List<Users> findAllByOrderByIdUsersAsc();
 
 }

@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * The interface Revenue repository.
+ */
 @Repository
 public interface RevenueRepository extends JpaRepository<Revenue, Long> {
 
@@ -15,19 +18,41 @@ public interface RevenueRepository extends JpaRepository<Revenue, Long> {
     List<Revenue> findAll();
 
 
-    //ENCONTRAR LOS INGRESOS POR USUARIO6
+    /**
+     * Find by users username list.
+     *
+     * @param Username the username
+     * @return the list
+     */
+//ENCONTRAR LOS INGRESOS POR USUARIO6
     List<Revenue> findByUsers_Username(String Username);
 
 
-
-    //ELIMINAR POR ID
+    /**
+     * Delete by id revenue.
+     *
+     * @param id the id
+     */
+//ELIMINAR POR ID
     void deleteByIdRevenue(Long id);
 
 
-    //ENCONTRAR POR ID
+    /**
+     * Find by id revenue revenue.
+     *
+     * @param id the id
+     * @return the revenue
+     */
+//ENCONTRAR POR ID
     Revenue findByIdRevenue(Long id);
 
 
+    /**
+     * Find top 10 by users username list.
+     *
+     * @param username the username
+     * @return the list
+     */
     List<Revenue> findTop10ByUsers_Username(String username);
 
 

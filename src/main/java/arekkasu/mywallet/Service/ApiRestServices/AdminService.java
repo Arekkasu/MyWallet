@@ -20,6 +20,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The type Admin service.
+ */
 @Service
 public class AdminService {
 
@@ -36,16 +39,33 @@ public class AdminService {
     private RevenueRepository revenueRepository;
 
 
-    //SECCION DE USUARIOS
+    /**
+     * Users list list.
+     *
+     * @return the list
+     */
+//SECCION DE USUARIOS
     public List<Users> usersList(){
         return usersRepository.findAllByOrderByIdUsersAsc();
     }
 
-    //BUSCAR USUARIO POR ID
+    /**
+     * Find user by id users users.
+     *
+     * @param id the id
+     * @return the users
+     */
+//BUSCAR USUARIO POR ID
     public Users findUserByIdUsers(Long id){
         return usersRepository.findByIdUsers(id);
     }
 
+    /**
+     * User register users.
+     *
+     * @param registerUser the register user
+     * @return the users
+     */
     public Users UserRegister(RegisterUserDTO registerUser){
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -70,13 +90,25 @@ public class AdminService {
     }
 
 
-    //COMPROBAR SI EXISTE
+    /**
+     * Exists by username boolean.
+     *
+     * @param username the username
+     * @return the boolean
+     */
+//COMPROBAR SI EXISTE
     public boolean existsByUsername(String username){
         return usersRepository.existsByUsername(username);
     }
 
 
-    //Guardar usuario
+    /**
+     * Save user users.
+     *
+     * @param user the user
+     * @return the users
+     */
+//Guardar usuario
     public Users saveUser(Users user){
         return usersRepository.save(user);
     }
@@ -84,6 +116,11 @@ public class AdminService {
 
     //ELIMINAR USUARIO
 
+    /**
+     * Delete user.
+     *
+     * @param id the id
+     */
     @Transactional
     public void deleteUser(Long id) {
         Optional<Users> usuario = usersRepository.findById(id);
@@ -109,6 +146,11 @@ public class AdminService {
 
     //LISTADO DE GASTO DE TODOS
 
+    /**
+     * Find all expenses list.
+     *
+     * @return the list
+     */
     public List<Expenses> findAllExpenses(){
         return expensesRepository.findAll();
     }
@@ -116,16 +158,34 @@ public class AdminService {
 
     //LISTADO DE GASTO POR NOMBRE DE USUARIO
 
+    /**
+     * Expenses by username list.
+     *
+     * @param id the id
+     * @return the list
+     */
     public List<Expenses> expensesByUsername(Long id){
 
         return expensesRepository.findByUsers_IdUsers(id);
 
     }
 
+    /**
+     * Find expense by id expenses.
+     *
+     * @param id the id
+     * @return the expenses
+     */
     public Expenses findExpenseById(Long id){
         return expensesRepository.findByIdExpenses(id);
     }
 
+    /**
+     * Save expense expenses.
+     *
+     * @param expenseDto the expense dto
+     * @return the expenses
+     */
     @Transactional
     public Expenses saveExpense(expenseDto expenseDto){
         Users users = usersRepository.findByUsername(expenseDto.getUsername());
@@ -136,6 +196,12 @@ public class AdminService {
 
     }
 
+    /**
+     * Save edit expense expenses.
+     *
+     * @param editExpense the edit expense
+     * @return the expenses
+     */
     @Transactional
     public Expenses saveEditExpense(editExpense editExpense){
         Users users = usersRepository.findByUsername(editExpense.getUsername());
@@ -149,31 +215,36 @@ public class AdminService {
     }
 
 
-    //ELIMINAR GASTO POR ID
+    /**
+     * Delete expense.
+     *
+     * @param id the id
+     */
+//ELIMINAR GASTO POR ID
     @Transactional
     public void deleteExpense(Long id){
         expensesRepository.deleteByIdExpenses(id);
     }
 
 
-
-
-
-
-
-
-
-
-
-
-    //LISTAD DE TODOS LOS INGRESOS
+    /**
+     * Find all revenues list.
+     *
+     * @return the list
+     */
+//LISTAD DE TODOS LOS INGRESOS
     public List<Revenue> findAllRevenues(){
         return revenueRepository.findAll();
     }
 
 
-
-    //LISTADO DE INGRESOS POR ID de ingreso
+    /**
+     * Find revenue by id revenue.
+     *
+     * @param id the id
+     * @return the revenue
+     */
+//LISTADO DE INGRESOS POR ID de ingreso
     public Revenue findRevenueById(Long id){
         return revenueRepository.findByIdRevenue(id);
     }
@@ -181,12 +252,23 @@ public class AdminService {
 
     //Listado de ingresos por usuario
 
+    /**
+     * Revenue by username list.
+     *
+     * @param username the username
+     * @return the list
+     */
     public List<Revenue> revenueByUsername(String username){
         return revenueRepository.findByUsers_Username(username);
     }
 
 
-    //ELIMINAR INGRESO POR ID
+    /**
+     * Delete revenue.
+     *
+     * @param id the id
+     */
+//ELIMINAR INGRESO POR ID
     @Transactional
     public void deleteRevenue(Long id){
         Optional<Revenue> revenue = revenueRepository.findById(id);
@@ -197,6 +279,12 @@ public class AdminService {
         }
     }
 
+    /**
+     * Save revenue revenue.
+     *
+     * @param revenueDTO the revenue dto
+     * @return the revenue
+     */
     @Transactional
     public Revenue saveRevenue(revenueDto revenueDTO){
         Users users = usersRepository.findByUsername(revenueDTO.getUsername());
@@ -207,6 +295,12 @@ public class AdminService {
 
     }
 
+    /**
+     * Save edit revenue revenue.
+     *
+     * @param editRevenue the edit revenue
+     * @return the revenue
+     */
     @Transactional
     public Revenue saveEditRevenue(editRevenue editRevenue){
         Users users = usersRepository.findByUsername(editRevenue.getUsername());
