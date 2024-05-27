@@ -84,6 +84,7 @@ public class IndexController {
 
         model.addAttribute("messageSucces", "Usuario Registrado con exito");
         usersService.UserRegister(registerUser);
+
         return "register";
     }
 

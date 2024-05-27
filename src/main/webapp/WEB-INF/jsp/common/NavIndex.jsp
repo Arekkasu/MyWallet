@@ -14,7 +14,7 @@
                         <a class="nav-link" aria-current="page" href="/"><fmt:message key="navbar.home" /></a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link" href="#features"><fmt:message key="navbar.features" /></a>
+                        <a class="nav-link" href="/#features"><fmt:message key="navbar.features" /></a>
                     </li>
                     <li class="nav-item text-center">
                         <a class="nav-link" href="/login"><fmt:message key="navbar.login" /></a>

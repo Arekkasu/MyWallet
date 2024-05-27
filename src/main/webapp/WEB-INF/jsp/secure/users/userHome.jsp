@@ -7,7 +7,7 @@
 <!-- Sección 1: Bienvenida y total de dinero -->
 <div class="container text-center py-5">
     <h1 class="text-light"><fmt:message key="user.home.welcome" /> ${user.username}</h1>
-    <p class="text-light"><fmt:message key="user.home.totalMoney" /> ${user.totalAmount}</p>
+    <p class="text-light"><fmt:message key="user.home.totalMoney" /> $${user.totalAmount}</p>
 </div>
 
 <!-- Sección 2: Últimos movimientos -->

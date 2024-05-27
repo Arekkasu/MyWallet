@@ -25,7 +25,6 @@ function TablaRevenue() {
                 },
                 data: data,
                 columns: [
-                    { data: 'idRevenue', title: 'ID Revenue' },
                     { data: 'revenueHeader', title: 'Revenue Header' },
                     { data: 'revenueDescription', title: 'Revenue Description' },
                     { data: 'revenueDate', title: 'Date' },
@@ -70,7 +69,6 @@ function TablaExpenses() {
 
                     data: data,
                     columns: [
-                        {data: 'idExpenses', className: 'text-center', title: 'ID'},
                         {data: 'expenseHeader', title: 'Expense Header'},
                         {data: 'expenseDescription', title: 'Expense Description'},
                         {data: 'expenseDate', title: 'Expense Date'},
