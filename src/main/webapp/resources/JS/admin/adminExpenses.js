@@ -81,7 +81,7 @@ function TablaRevenue() {
                 type: "DELETE",
                 success: function (data) {
                     table.destroy();
-                    TablaExpenses();
+                    TablaRevenue();
                 },
                 error: function (error) {
                     alert("ERROR");

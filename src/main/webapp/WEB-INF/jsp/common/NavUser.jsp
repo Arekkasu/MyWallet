@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <section id="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -11,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/user"><fmt:message key="navbar.home" /></a>
+                        <a class="nav-link" aria-current="page" href="/"><fmt:message key="navbar.users" /></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/user/expenses"><fmt:message key="navbar.expenses" /></a>
@@ -39,3 +38,4 @@
         </div>
     </nav>
 </section>
+

@@ -65,6 +65,6 @@
     <table id="expenses" class="display table table-striped table-dark" style="width: 100%"></table>
 </section>
 
-
+<%@ include file="../../common/footer.jsp" %>
 </body>
 </html>

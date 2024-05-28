@@ -126,20 +126,17 @@ public class AdminService {
         Optional<Users> usuario = usersRepository.findById(id);
         if (usuario.isPresent()) {
             Users user = usuario.get();
-            // Check if the user has the admin or user role
-            boolean isAdminOrUser = user.getRoles().stream().anyMatch(role -> role.getRoleName().equals("ROLE_ADMIN") || role.getRoleName().equals("ROLE_USER"));
-            if (!isAdminOrUser) {
-                // Remove all roles from the user
-                user.getRoles().clear();
-                // Save the user
-                usersRepository.save(user);
-            }
+            // Remove all roles from the user
+            user.getRoles().clear();
+            // Save the user
+            usersRepository.save(user);
             // Now you can delete the user
             usersRepository.deleteById(id);
         } else {
-            System.out.println("no EXiste o ya fue eliminado");
+            System.out.println("User does not exist or has already been deleted");
         }
     }
+
 
 
 

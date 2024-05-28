@@ -3,7 +3,9 @@ package arekkasu.mywallet.Repository;
 
 import arekkasu.mywallet.Model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -56,5 +58,10 @@ public interface UsersRepository  extends JpaRepository<Users, Long> {
      */
 //OBTENER TODOS LOS USUARIOS ORDENADOS POR ID
     List<Users> findAllByOrderByIdUsersAsc();
+
+
+    @Modifying
+    @Query(value = "DELETE FROM users_roles WHERE id_users = :userId", nativeQuery = true)
+    void deleteUserRoles(@Param("userId") Long userId);
 
 }

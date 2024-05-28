@@ -8,13 +8,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ERROR</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="../../../../resources/favicon_io/site.webmanifest">
-    <link rel="Stylesheet" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
-    <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-    <link rel="Stylesheet" href="../../resources/styles/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../resources/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../resources/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../resources/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../../../resources/favicon_io/site.webmanifest">
+    <link rel="Stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+    <script src="${pageContext.request.contextPath}/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <link rel="Stylesheet" href="../../../resources/styles/style.css">
     <script src="https://kit.fontawesome.com/b7f27d0091.js" crossorigin="anonymous"></script>
 </head>
 <body>

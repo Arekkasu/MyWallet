@@ -6,7 +6,7 @@
             <a href="https://github.com/Arekkasu" class="social-link mx-2">
                 <i class="social-icon fa-brands fa-github fa-xl icon-color"></i>
             </a>
-            <a href="#" class="social-link mx-2">
+            <a href="https://www.instagram.com/alx_lozadac/" class="social-link mx-2">
                 <i class="social-icon fa-brands fa-instagram fa-xl icon-color"></i>
             </a>
             <a href="mailto:alozadac@gmail.com" class="social-link mx-2">

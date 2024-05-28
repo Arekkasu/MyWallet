@@ -63,6 +63,7 @@ function TablaUsuario() {
 
     $(document).on('click', '.delete-button', function() {
         let Idusername = $(this).data('idusers');
+        console.log(Idusername)
         let confirmacion = confirm(i18n['user.delete.confirm'])
 
         if(confirmacion){
