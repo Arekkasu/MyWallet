@@ -1,0 +1,10 @@
+arekkasu.mywallet
+arekkasu.mywallet.Config
+arekkasu.mywallet.Controller
+arekkasu.mywallet.Controller.DTO
+arekkasu.mywallet.Controller.DTO.usersDTO
+arekkasu.mywallet.Model
+arekkasu.mywallet.Repository
+arekkasu.mywallet.Security
+arekkasu.mywallet.Service
+arekkasu.mywallet.Service.ApiRestServices
